@@ -1,0 +1,64 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "{{ cookiecutter.package_name }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.description }}"
+authors = [
+    "{{ cookiecutter.author_name }} <{{ cookiecutter.author_email }}>"
+]
+readme = "README.md"
+license = "{{ cookiecutter.license }}"
+repository = "{{ cookiecutter.repository_url }}"
+documentation = "{{ cookiecutter.documentation_url }}"
+packages = [{include = "{{ cookiecutter.package_name }}", from = "src"}]
+include = ["src/{{ cookiecutter.package_name }}/py.typed", "src/{{ cookiecutter.package_name }}/**/*.pyi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: {{ cookiecutter.license_classifier }}",
+    "Operating System :: OS Independent",
+    "Development Status :: {{ cookiecutter.dev_status }}",
+    "Intended Audience :: {{ cookiecutter.audience }}",
+    "Topic :: {{ cookiecutter.topic }}"
+]
+keywords = {{ cookiecutter.keywords }}
+
+[tool.poetry.dependencies]
+python = ">=3.9, <4.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-cov = "*"
+pylint = "*"
+mypy = "*"
+bandit = "*"
+pip-audit = "*"
+pre-commit = "*"
+hypothesis = "*"
+sphinx = "*"
+furo = "*"
+sphinx-autodoc-typehints = "*"
+myst-parser = "*"
+linkify-it-py = "*"
+sphinxcontrib-googleanalytics = "*"
+tox = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+tomli = "*"
+sphinx-sitemap = "*"
+
+[tool.mypy]
+files = "{{ cookiecutter.package_name }}"
+ignore_missing_imports = true
+
+[tool.pylint]
+max-line-length = 120
+ignore-patterns = [".*\\.pyi$"]
+
+[tool.bandit]
+exclude_dirs = ["tests", "docs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
