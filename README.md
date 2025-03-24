@@ -3,5 +3,5 @@
 ## Usage:
 
 ```bash
-$ cookiecutter gh:nikhilxsunder/python-package-templates
+$ cookiecutter gh:nikhilxsunder/python-package-template
 ```
