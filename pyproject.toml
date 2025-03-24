@@ -11,17 +11,17 @@ authors = [
 ]
 readme = "README.md"
 license = "{{ cookiecutter.license }}"
-repository = "{{ cookiecutter.repository_url }}"
-documentation = "{{ cookiecutter.documentation_url }}"
+repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}"
+documentation = "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.package_name }}/"
 packages = [{include = "{{ cookiecutter.package_name }}", from = "src"}]
 include = ["src/{{ cookiecutter.package_name }}/py.typed", "src/{{ cookiecutter.package_name }}/**/*.pyi"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: {{ cookiecutter.license_classifier }}",
+    "License :: OSI Approved :: AGPL-3.0-or-later",
     "Operating System :: OS Independent",
-    "Development Status :: {{ cookiecutter.dev_status }}",
-    "Intended Audience :: {{ cookiecutter.audience }}",
-    "Topic :: {{ cookiecutter.topic }}"
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries"
 ]
 keywords = {{ cookiecutter.keywords }}
 
