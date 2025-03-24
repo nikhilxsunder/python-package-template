@@ -2,14 +2,8 @@
   "package_name": "my_package",
   "version": "0.1.0",
   "description": "A short description of the package",
+  "github_username": "Your Github Username",
   "author_name": "Your Name",
   "author_email": "your.email@example.com",
-  "license": "MIT",
-  "license_classifier": "MIT License",
-  "repository_url": "https://github.com/yourusername/my_package",
-  "documentation_url": "https://yourusername.github.io/my_package/",
-  "dev_status": "3 - Alpha",
-  "audience": "Developers",
-  "topic": "Software Development :: Libraries",
   "keywords": ["template", "cookiecutter", "python"]
 }
