@@ -1,0 +1,43 @@
+package:
+  name: {{ cookiecutter.package_name }}
+  version: {{ cookiecutter.version }}
+
+source:
+  url: "https://pypi.io/packages/source/f/{{ cookiecutter.package_name }}/{{ cookiecutter.package_name }}-{{ cookiecutter.version }}.tar.gz"
+  sha256: ""
+
+build:
+  noarch: python
+  number: 0
+  script: |
+    python -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.9,<4.0
+    - pip
+    - poetry-core >=1.0.0
+  run:
+    - python >=3.9,<4.0
+
+test:
+  imports:
+    - fedfred
+  requires:
+    - pip
+  commands:
+    - pip check
+
+about:
+  home: "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}"
+  doc_url: "https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.package_name }}/"
+  dev_url: "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}"
+  license: AGPL-3.0-or-later
+  license_family: AGPL
+  license_file: LICENSE
+  summary: "{{ cookiecutter.description }}"
+  description: ""
+
+extra:
+  recipe-maintainers:
+    - {{ cookiecutter.github_username }}
