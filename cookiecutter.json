@@ -2,7 +2,9 @@
   "package_name": "my_package",
   "version": "0.1.0",
   "description": "A short description of the package",
+  "summary": "A detailed summary of the package"
   "github_username": "Your Github Username",
+  "anaconda_username": "Your Anaconda Username",
   "author_name": "Your Name",
   "author_email": "your.email@example.com",
   "keywords": ["template", "cookiecutter", "python"]
